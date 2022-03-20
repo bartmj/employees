@@ -11,7 +11,9 @@ class EmployeeManagerImpl : EmployeeManager {
     }
 
     override fun logInfo(employee: Employee) {
-        print(" " + employee.id + " " + employee.address + " " + employee.salary + " " + employee.position)
+        for (e in employees) {
+            print(" " + employee.id + " " + employee.address + " " + employee.salary + " " + employee.position)
+        }
     }
 
     override fun payrollSum() {
