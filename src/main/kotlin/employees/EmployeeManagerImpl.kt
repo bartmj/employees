@@ -2,25 +2,23 @@ package employees
 
 class EmployeeManagerImpl : EmployeeManager {
 
-    private var totalSum: Int = 0
-
     private val employees = mutableListOf<Employee>()
 
     override fun add(employee: Employee) {
         employees.add(employee)
     }
 
-    override fun logInfo(employee: Employee) {
+    override fun logInfo() {
         for (e in employees) {
-            print(" " + employee.id + " " + employee.address + " " + employee.salary + " " + employee.position)
+            print("${e.id} ${e.address} ${e.salary} ${e.position}")
         }
     }
 
-    override fun payrollSum() {
+    override fun payrollSum(): Int {
         var sum : Int = 0
         for(e in employees) {
             sum += e.salary
         }
-        totalSum = sum
+        return sum
     }
 }
